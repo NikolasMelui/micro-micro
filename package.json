@@ -7,7 +7,9 @@
 	"license": "MIT",
 	"private": true,
 	"scripts": {
-		"start": "nodemon src/index.js --exec babel-node",
+		"start": "micro src/index.js",
+		"dev": "micro-dev src/index.js",
+		"nodemon": "nodemon src/index.js --exec babel-node",
 		"build": "babel src -d build",
 		"serve": "node build/index.js"
 	},
@@ -19,6 +21,7 @@
 		"eslint-config-airbnb": "^16.1.0",
 		"eslint-config-prettier": "^2.9.0",
 		"eslint-plugin-import": "^2.10.0",
+		"micro-dev": "^3.0.0",
 		"nodemon": "^1.17.3"
 	},
 	"eslintConfig": {
@@ -26,10 +29,10 @@
 		"env": {
 			"node": true
 		},
-		"extends": [
-			"airbnb-base",
-			"prettier"
-		]
+		"extends": ["airbnb-base", "prettier"]
 	},
-	"eslint.packageManager": "yarn"
+	"eslint.packageManager": "yarn",
+	"dependencies": {
+		"micro": "^9.3.2"
+	}
 }
